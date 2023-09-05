@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-print("".join([chr(ord('a') + i) for i in range(26)]), end="")
+for char_code in range(97, 123):
+    print("{}".format(chr(char_code)), end='')
 
