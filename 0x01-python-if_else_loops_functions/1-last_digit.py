@@ -3,7 +3,9 @@ import random
 number = random.randint(-10000, 10000)
 last_dig = abs(number) % 10   # absolute value of the last digit
 
-output = f"Last digit of {number} is {last_dig}"
+if number < 0:
+    last_dig = -last_dig
+output = f"Last digit of {number:d} is {last_dig:d}"
 
 if last_dig > 5:
     output += " and is greater than 5"
