@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+import random
+number = random.randint(-10000, 10000)
+last_dig = abs(number) % 10   # absolute value of the last digit
+
+output = f"Last digit of {number} is {last_dig}"
+
+if last_dig > 5:
+    output += " and is greater than 5"
+elif last_dig == 0:
+    output += " and is 0"
+else:
+    output += " and is less than 6 and not 0"
+
+print(output)
