@@ -9,6 +9,8 @@ if __name__ == "__main__":
     # print number of arguments
     if num_of_arguments == 0:
         print("{} arguments.".format(num_of_arguments))
+    elif num_of_arguments == 1:
+        print("{} argument:".format(num_of_arguments))
     else:
         print("{} arguments:".format(num_of_arguments))
     # get the list of all arguments
