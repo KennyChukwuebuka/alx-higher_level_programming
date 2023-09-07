@@ -5,10 +5,10 @@ if __name__ == "__main__":
 
     from calculator_1 import add, sub, mul, div
 
-    result_add = add(10, 5)
-    result_sub = sub(10, 5)
-    result_mul = mul(10, 5)
-    result_div = div(10, 5)
+    result_add = add(a, b)
+    result_sub = sub(a, b)
+    result_mul = mul(a, b)
+    result_div = div(a, b)
 
     print('{} + {} = {}'.format(a, b, result_add))
     print('{} - {} = {}'.format(a, b, result_sub))
