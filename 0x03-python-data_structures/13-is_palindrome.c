@@ -8,39 +8,39 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow = *head;
-	listint_t *fast = *head;
-	listint_t *prev = NULL;
-	listint_t *temp;
+	listint_t *ele_slow = *head;
+	listint_t *ele_fast = *head;
+	listint_t *ele_prev = NULL;
+	listint_t *ele_tp;
 /*check empty list or list with single element is palindrome*/
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		return (1);
 	}
 /*find the middle of list and reverse the first*/
-	while (fast != NULL && fast->next != NULL)
+	while (ele_fast != NULL && ele_fast->next != NULL)
 	{
-		fast = fast->next->next;
+		ele_fast = ele_fast->next->next;
 /*reverse first half of the list*/
-		temp = slow;
-		slow = slow->next;
-		temp->next = prev;
-		prev = temp;
+		ele_tp = ele_slow;
+		ele_slow = ele_slow->next;
+		ele_tp->next = ele_prev;
+		ele_prev = ele_tp;
 	}
 /*if list has odd number of ele, skip middle ele*/
-	if (fast != NULL)
+	if (ele_fast != NULL)
 	{
-		slow = slow->next;
+		ele_slow = ele_slow->next;
 	}
 /*compare reversed first half with second half*/
-	while (slow != NULL)
+	while (ele_slow != NULL)
 	{
-		if (prev->n != slow->n)
+		if (ele_prev->n != ele_slow->n)
 		{
 			return (0);/*not a palindrome*/
 		}
-		prev = prev->next;
-		slow = slow->next;
+		ele_prev = ele_prev->next;
+		ele_slow = ele_slow->next;
 	}
 	return (1);/*palindrome*/
 }
