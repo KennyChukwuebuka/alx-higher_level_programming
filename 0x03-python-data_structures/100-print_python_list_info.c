@@ -1,34 +1,15 @@
 #include <Python.h>
 #include <object.h>
 #include <listobject.h>
-/**
- * print_python_list_info - Cpython function
- * @p: params
- *
- * Return: pyhton list
- */
 
 void print_python_list_info(PyObject *p)
 {
-	if (!PyList_Check(p))
-	{
-		printf("Invalid argument: Not a Python list.\n");
-		return;
-	}
+	long int size = PyList_Size(p);
+	int i;
+	PyListObject *obj = (PyListObject *)p;
 
-	Py_ssize_t size = PyList_Size(p);
-	Py_ssize_t allocated = ((PyListObject *)p)->allocated;
-
-	printf("[*] Size of the Python List = %ld\n", size);
-	printf("[*] Allocated = %ld\n", allocated);
-
-	if (size > 0)
-	{
-		PyObject *last_element = PyList_GetItem(p, size - 1);
-
-		printf("[*] Element %ld: %s\n", size - 1,
-				Py_TYPE(last_element)->tp_name);
-	}
-
-	printf("[*] Element %ld: %s\n", p->ob_refcnt, Py_TYPE(p)->tp_name);
+	printf("[*] Size of the Python List = %li\n", size);
+	printf("[*] Allocated = %li\n", obj->allocated);
+	for (i = 0; i < size; i++)
+		printf("Element %i: %s\n", i, Py_TYPE(obj->ob_item[i])->tp_name);
 }
