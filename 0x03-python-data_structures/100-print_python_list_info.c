@@ -7,11 +7,11 @@ void print_python_list_info(PyObject *p) {
         return;
     }
 
+
     Py_ssize_t size = PyList_Size(p);
 
 
     Py_ssize_t ref_count = p->ob_refcnt;
-
 
     printf("[*] Size of the Python List = %ld\n", size);
     printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
