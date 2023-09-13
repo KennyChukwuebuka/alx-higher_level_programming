@@ -14,7 +14,7 @@ def roman_to_int(roman_string):
     dict_rom_num = {
         'I': 1,
         'V': 5,
-        'X': 0,
+        'X': 10,
         'L': 50,
         'C': 100,
         'D': 500,
@@ -32,4 +32,6 @@ def roman_to_int(roman_string):
             res -= val
         else:
             res += val
+            prv_value = val
+
     return res
