@@ -1,12 +1,12 @@
 #include <Python.h>
+#include <object.h>
+#include <listobject.h>
 /**
  * print_python_list_info - Cpython function
  * @p: params
  *
  * Return: pyhton list
  */
-
-#include <Python.h>
 
 void print_python_list_info(PyObject *p)
 {
