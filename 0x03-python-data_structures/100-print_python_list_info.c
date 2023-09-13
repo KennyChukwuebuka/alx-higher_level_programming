@@ -1,11 +1,13 @@
 #include <Python.h>
 #include <object.h>
 #include <listobject.h>
+
 /**
  * print_python_list_info - Cpython function
  * @p: params
  * Return: python list
  */
+
 void print_python_list_info(PyObject *p)
 {
 	long int size = PyList_Size(p);/*using long int*/
