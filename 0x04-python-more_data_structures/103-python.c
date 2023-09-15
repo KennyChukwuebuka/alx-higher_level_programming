@@ -40,9 +40,9 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", data);
 
-	printf("  first 10 bytes: ");
+	printf("  first %ld bytes: ", (size < 10) ? size : 10);
 	for (i = 0; i < size && i < 10; i++) {
-		printf("%02x", (unsigned char)data[i]);
+		printf("%02hhx", data[i]);
 		if (i < 9)
 			printf(" ");
 	}
