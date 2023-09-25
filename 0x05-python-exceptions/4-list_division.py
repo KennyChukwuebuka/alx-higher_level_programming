@@ -10,25 +10,21 @@ def list_division(my_list_1, my_list_2, list_length):
         Return:
             a new list with all division
     """
-    ret = []
-    try:
-        for item in range(list_length):
-            if item >= len(my_list_1) or item >= len(my_list_2):
-                raise IndexError("out of range")
-            try:
-                alist = float(my_list_1[item])
-                blist = float(my_list_2[item])
-                if blist == 0:
-                    raise ZeroDivisionError("division by 0")
-                divided_result = alist / blist
-                ret.append(divided_result)
-            except ValueError:
-                ret.append(0)
-                print("wrong type")
-            except ZeroDivisionError:
-                ret.append(0)
-                print("division by 0")
-    except IndexError:
-        print("out of range")
-    finally:
-        return ret
+    i = 0
+    new_result_list = []
+    res = 0
+    for i in range(0, list_length):
+        try:
+            res = (my_list_1[i] / my_list_2[i])
+        except TypeError:
+            res = 0
+            print("wrong type")
+        except ZeroDivisionError:
+            res = 0
+            print("division by 0")
+        except IndexError:
+            res = 0
+            print("out of range")
+        finally:
+            new_result_list.append(res)
+    return new_result_list
