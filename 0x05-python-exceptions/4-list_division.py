@@ -1,34 +1,34 @@
+#!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    result = []
-    try:
-        for i in range(list_length):
-            # Check if both lists are too short
-            if i >= len(my_list_1) or i >= len(my_list_2):
-                raise IndexError("out of range")
+    """list_division
 
-            # Attempt the division
+        Args:
+            my_list_1:  integer or string
+            my_list_2:  integer or string
+            list_length:    length of both
+
+        Return:
+            a new list with all division
+    """
+    ret = []
+    try:
+        for item in range(list_length):
+            if item >= len(my_list_1) or item >= len(my_list_2):
+                raise IndexError("out of range")
             try:
-                a = float(my_list_1[i])
-                b = float(my_list_2[i])
-                if b == 0:
+                alist = float(my_list_1[item])
+                blist = float(my_list_2[item])
+                if blist == 0:
                     raise ZeroDivisionError("division by 0")
-                division_result = a / b
-                result.append(division_result)
+                divided_result = alist / blist
+                ret.append(divided_result)
             except ValueError:
-                result.append(0)
+                ret.append(0)
                 print("wrong type")
             except ZeroDivisionError:
-                result.append(0)
+                ret.append(0)
                 print("division by 0")
     except IndexError:
         print("out of range")
     finally:
-        return result
-
-# Example usage:
-my_list_1 = [10, 20, 30]
-my_list_2 = [2, 0, "40"]
-list_length = 5
-
-result = list_division(my_list_1, my_list_2, list_length)
-print(result)
+        return ret
