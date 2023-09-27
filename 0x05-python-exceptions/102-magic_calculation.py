@@ -9,12 +9,14 @@ def magic_calculation(a, b):
     Return:
         Bytecodes
     """
-    if a < b:
-        ret = a + b
-    elif a > b:
-        ret = a * b
-    elif a == b:
-        ret = a % b
-    else:
-        ret = None
-    return ret
+    res = 0
+
+    for i in range(1, 4):
+        try:
+            if i > a:
+                raise Exception('Too far')
+            res += (a ** b) / i
+        except:
+            res += a + b
+
+    return res
