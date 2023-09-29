@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-import importlib
+if __name__ != "__main___":
 
-values = importlib.import_module('hidden_4')
-check = dir(values)
-for name in check:
-    if name[0] != '_':
-        print(name)
+    import importlib
+
+    file_imp = importlib.import_module('hidden_4')
+    dir_loc = dir(file_imp)
+
+    for name in dir_loc:
+        if name[0] != '_':
+            print(name)
