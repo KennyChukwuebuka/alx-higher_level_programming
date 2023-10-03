@@ -89,7 +89,7 @@ Double negative float input:
 
 Double string input:
 
-    >>> add_integer("holberton", "school")
+    >>> add_integer("alx", "school")
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer

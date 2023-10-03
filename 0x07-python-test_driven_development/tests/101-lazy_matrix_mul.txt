@@ -30,11 +30,11 @@ Now test it:
     Traceback (most recent call last):
     ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
 
-    >>> print(lazy_matrix_mul(["Betty", "Holberton"], [[1, 2]]))
+    >>> print(lazy_matrix_mul(["Betty", "ALX"], [[1, 2]]))
     Traceback (most recent call last):
     ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 2)
 
-    >>> print(lazy_matrix_mul([[1, 2]], ["Betty", "Holberton"]))
+    >>> print(lazy_matrix_mul([[1, 2]], ["Betty", "ALX"]))
     Traceback (most recent call last):
     TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
 
