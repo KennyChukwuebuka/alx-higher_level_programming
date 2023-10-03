@@ -8,8 +8,8 @@ class Rectangle:
     taking in two arguments.
 
     Args:
-        width params
-        height params
+        width (int): horizontal dimension of rectangle, defaults to 0
+        height (int): vertical dimension of rectangle, defaults to 0
 
     """
     def __init__(self, width=0, height=0):
@@ -22,7 +22,7 @@ class Rectangle:
         """__width getter.
 
         Returns:
-            __width paams
+            __width (int): horizontal dimension of rectangle
 
         """
         return self.__width
@@ -30,7 +30,7 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """Args:
-            value params
+            value (int): horizontal dimension of rectangle
 
         Attributes:
             __width (int): horizontal dimension of rectangle
@@ -59,10 +59,10 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """Args:
-            value params
+            value (int): vertical dimension of rectangle
 
         Attributes:
-            __height 
+            __height (int): vertical dimension of rectangle
 
         Raises:
             TypeError: If `value` is not an int.
@@ -74,3 +74,4 @@ class Rectangle:
         if value < 0:
             raise ValueError('height must be >= 0')
         self.__height = value
+    
