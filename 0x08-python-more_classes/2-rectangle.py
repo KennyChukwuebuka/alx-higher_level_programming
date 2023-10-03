@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-"""1-rectangle.
+"""2-rectangle.
 """
 
 
 class Rectangle:
-    """At this stage the class only creates private instance attributes by
-    taking in two arguments.
+    """Takes in args for width and height of a rectangle.
 
     Args:
-        width (int): horizontal dimension of rectangle, defaults to 0
-        height (int): vertical dimension of rectangle, defaults to 0
+        width parameter
+        height parameter
 
     """
     def __init__(self, width=0, height=0):
@@ -22,7 +21,7 @@ class Rectangle:
         """__width getter.
 
         Returns:
-            __width (int): horizontal dimension of rectangle
+            __width  horizontal dimension of rectangle
 
         """
         return self.__width
@@ -30,10 +29,10 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """Args:
-            value (int): horizontal dimension of rectangle
+            value parameter
 
         Attributes:
-            __width (int): horizontal dimension of rectangle
+            __width parameter
 
         Raises:
             TypeError: If `value` is not an int.
@@ -51,7 +50,7 @@ class Rectangle:
         """__height getter.
 
         Returns:
-            __height (int): vertical dimension of rectangle
+            __height vertical dimension of rectangle
 
         """
         return self.__height
@@ -59,10 +58,10 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """Args:
-            value (int): vertical dimension of rectangle
+            value parameter
 
         Attributes:
-            __height (int): vertical dimension of rectangle
+            __height parameter
 
         Raises:
             TypeError: If `value` is not an int.
@@ -74,3 +73,33 @@ class Rectangle:
         if value < 0:
             raise ValueError('height must be >= 0')
         self.__height = value
+
+    def area(self):
+        """Returns area of a rectangle of a given `width` and `height`.
+
+        Attributes:
+            __width parameter
+            __height parameter
+
+        Returns:
+            Area of rectangle: __width * __height
+
+        """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Returns the perimeter of a rectangle of given `width` and `height`
+
+        Attributes:
+            __width parameter
+            __height parameter
+
+        Returns:
+            0 if either attribute is 0, or the perimeter: (__width * 2) +
+            (__height * 2).
+
+        """
+        if self.__width is 0 or self.__height is 0:
+            return 0
+        else:
+            return (self.__width * 2) + (self.__height * 2)
