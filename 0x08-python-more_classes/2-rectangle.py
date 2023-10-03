@@ -18,10 +18,10 @@ class Rectangle:
 
     @property
     def width(self):
-        """__width getter.
+        """width getter.
 
         Returns:
-            __width  horizontal dimension of rectangle
+            width  horizontal dimension of rectangle
 
         """
         return self.__width
@@ -32,7 +32,7 @@ class Rectangle:
             value parameter
 
         Attributes:
-            __width parameter
+            width parameter
 
         Raises:
             TypeError: If `value` is not an int.
@@ -47,10 +47,10 @@ class Rectangle:
 
     @property
     def height(self):
-        """__height getter.
+        """height getter.
 
         Returns:
-            __height vertical dimension of rectangle
+            height vertical dimension of rectangle
 
         """
         return self.__height
@@ -61,7 +61,7 @@ class Rectangle:
             value parameter
 
         Attributes:
-            __height parameter
+            height parameter
 
         Raises:
             TypeError: If `value` is not an int.
@@ -75,28 +75,28 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Returns area of a rectangle of a given `width` and `height`.
+        """Area of a rectangle of a given `width` and `height`.
 
         Attributes:
-            __width parameter
-            __height parameter
+            width parameter
+            height parameter
 
         Returns:
-            Area of rectangle: __width * __height
+            Area of rectangle: width * height
 
         """
         return self.__width * self.__height
 
     def perimeter(self):
-        """Returns the perimeter of a rectangle of given `width` and `height`
+        """Perimeter of a rectangle of given `width` and `height`
 
         Attributes:
-            __width parameter
-            __height parameter
+            width parameter
+            height parameter
 
         Returns:
-            0 if either attribute is 0, or the perimeter: (__width * 2) +
-            (__height * 2).
+            0 if either attribute is 0, or the perimeter: (width * 2) +
+            (height * 2).
 
         """
         if self.__width is 0 or self.__height is 0:
