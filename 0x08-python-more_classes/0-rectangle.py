@@ -1,2 +1,11 @@
 #!/usr/bin/python3
-"""Define"""
+"""Rectangle Class.
+
+This module contains an empty class that defines a rectangle.
+"""
+
+
+class Rectangle:
+    """Defines the blueprint of a rectangle"""
+
+    pass
