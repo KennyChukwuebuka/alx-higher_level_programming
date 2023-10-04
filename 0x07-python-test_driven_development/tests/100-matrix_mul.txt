@@ -3,11 +3,11 @@
     Traceback (most recent call last):
     TypeError: m_a must be a list
 
-    >>> matrix_mul(["Betty", "Holberton"], [[1, 2]])
+    >>> matrix_mul(["Betty", "ALX"], [[1, 2]])
     Traceback (most recent call last):
     TypeError: m_a must be a list of lists
 
-    >>> matrix_mul([[1, 2]], ["Betty", "Holberton"])
+    >>> matrix_mul([[1, 2]], ["Betty", "ALX"])
     Traceback (most recent call last):
     TypeError: m_b must be a list of lists
 
