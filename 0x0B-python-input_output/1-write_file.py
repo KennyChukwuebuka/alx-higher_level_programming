@@ -1,22 +1,9 @@
 #!/usr/bin/python3
-"""Define function that write to file"""
+""""Define function to write file"""
 
 
 def write_file(filename="", text=""):
-    """function that write file
-    Args:
-        filename
-        text
-    """
-    try:
+    """ function that writes a string to a text file (UTF8)  """
 
-        with open(filename, 'w', encoding='utf-8') as file:
-
-            file.write(text)
-
-            characters_written = len(text)
-            return characters_written
-    except Exception as e:
-
-        print(f"An error occurred: {e}")
-        return 0
+    with open(filename, "w", encoding='utf-8') as f:
+        return f.write(text)
