@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 def pascal_triangle(n):
     """ Pascal Triangle"""
-
-
     ret = []
     if n <= 0:
         return ret
