@@ -17,9 +17,5 @@ def append_after(filename="", search_string="", new_string=""):
         if search_string in line:
             read.insert(index + 1, new_string)
 
-    # Check if the last line already ends with a newline
-    if not read[-1].endswith('\n'):
-        read[-1] += '\n'
-
     with open(filename, "w", encoding="utf-8") as file:
         file.writelines(read)
