@@ -8,7 +8,15 @@ from models.base import Base
 class Rectangle(Base):
     """Class Rectangle from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Constructor"""
+        """Constructor
+        Args:
+            self:
+            width:
+            height:
+            x:
+            y:
+            id:
+        """
         super().__init__(id)
 
         self.width = width
