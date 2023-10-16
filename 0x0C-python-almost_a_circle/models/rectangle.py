@@ -27,48 +27,24 @@ class Rectangle(Base):
     # Getter and setter for width
     @property
     def width(self):
-        """Width Definition
-        Args:
-            self:
-        """
+        """width definition"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Width definition
-        Args:
-            self:
-            value:
-        """
-        if type(value) is not int:
-            raise ValueError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        self.validate_integer("width", value, False)
         self.__width = value
 
-    # Getter and setter for height
     @property
     def height(self):
-        """height
-        Args:
-            self:
-        """
+        """height definition"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """height definition
-        Args:
-            self:
-            value:
-        """
-        if type(value) is not int:
-            raise ValueError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
+        self.validate_integer("height", value, False)
         self.__height = value
 
-    # Getter and setter for x
     @property
     def x(self):
         """x definition"""
@@ -76,12 +52,9 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """x definition"""
-        if type(value) is not int:
-            raise ValueError("x must be an integer")
+        self.validate_integer("x", value)
         self.__x = value
 
-    # Getter and setter for y
     @property
     def y(self):
         """y definition"""
@@ -89,13 +62,17 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """y definition"""
+        self.validate_integer("y", value)
+        self.__y = value
+
+    def validate_integer(self, name, value, eq=True):
+        """validate definition"""
         if type(value) is not int:
-            raise ValueError("y must be an integer")
-        self.__y = value
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
+            raise TypeError("{} must be an integer".format(name))
+        if eq and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        elif not eq and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
 
     def area(self):
         """area definition"""
