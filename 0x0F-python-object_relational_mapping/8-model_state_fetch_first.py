@@ -6,6 +6,8 @@ mysql password and database name
 You must use the module SQLAlchemy
 You must import State and Base from model_state
 - from model_state import Base, State
+You are not allowed to fetch all states from the
+State database before displaying the result
 """
 
 import sys
