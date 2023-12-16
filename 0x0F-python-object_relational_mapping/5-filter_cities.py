@@ -2,7 +2,7 @@
 """script that takes in the name of a state as an argument
 and lists all cities of that state, using the database hbtn_0e_4_usa
 Results must be sorted in ascending order by cities.id
-Your script should take 4 arguments: mysql 
+Your script should take 4 arguments: mysql
 username, mysql password, database name and
 a state name (SQL injection free!)
 You must use the module MySQLdb (import MySQLdb)
