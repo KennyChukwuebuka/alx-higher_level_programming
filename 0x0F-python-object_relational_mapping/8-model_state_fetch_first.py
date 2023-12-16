@@ -8,6 +8,7 @@ You must import State and Base from model_state
 - from model_state import Base, State
 You are not allowed to fetch all states from the
 State database before displaying the result
+If the table states is empty, print Nothing followed by a new line
 """
 
 import sys
@@ -22,6 +23,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State).order_by(State.id).first():
+    state = session.query(State).order_by(State.id).first()
+    if state:
         print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
     session.close()
