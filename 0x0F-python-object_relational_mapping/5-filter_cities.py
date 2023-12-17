@@ -17,6 +17,6 @@ if __name__ == "__main__":
     c = db.cursor()
     c.execute("SELECT * FROM `cities` as `city` \
                 INNER JOIN `states` as `state` \
-                   ON `city`.`state_id` = `s`.`st_id` \
+                   ON `city`.`state_id` = `state`.`st_id` \
                 ORDER BY `city`.`id`")
     print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
