@@ -1,3 +1,3 @@
 #!/bin/bash
 # cURL to the end
-[ $# -eq 0 ] && echo "Usage: $0 <URL>" && exit 1; curl -s "$1" | grep -oP 'Route\s+\d+'
+if [ $(curl -L -s -X HEAD -w "%{http_code}" "$1") == '200' ]; then curl -Ls "$1"; fi
