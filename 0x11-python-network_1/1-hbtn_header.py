@@ -15,10 +15,10 @@ if __name__ == "__main__":
             with urllib.request.urlopen(url) as response:
                 request_id = response.getheader('X-Request-Id')
                 if request_id:
-                    print(f"{request_id}")
+                    print("{}".format(request_id))
                 else:
-                    print("X-Request-Id not found")
+                    print("X-Request-Id variable not found.")
         except urllib.error.HTTPError as e:
-            print(f"HTTP Error: {e.code} - {e.reason}")
+            print("HTTP Error: {} - {}".format(e.code, e.reason))
         except urllib.error.URLError as e:
-            print(f"URL Error: {e.reason}")
+            print("URL Error: {}".format(e.reason))
