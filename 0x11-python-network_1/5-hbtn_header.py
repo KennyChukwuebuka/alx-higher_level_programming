@@ -11,7 +11,6 @@ url = sys.argv[1]
 
 response = requests.get(url)
 
-if 'X-Request-Id' in response.headers:
-    print("{}".format(response.headers['X-Request-Id']))
-else:
-    print("X-Request-Id variable not found in the response headers.")
+x_request_id = response.headers.get('X-Request-Id')
+print("{}".format(x_request_id))
+
