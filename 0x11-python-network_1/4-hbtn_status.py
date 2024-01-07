@@ -12,4 +12,4 @@ response.status_code == 200
 
 print("Body response:")
 print("\t- type:", type(response.text))
-print("\t- content", response.text)
+print("\t- content:", response.text)
