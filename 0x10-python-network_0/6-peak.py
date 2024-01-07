@@ -8,7 +8,7 @@
 
 
 def find_peak(list_of_integers):
-    """returns a peak in a list of unsorted integers"""
+    """returns a peak in a list of the unsorted integers"""
     if list_of_integers:
         return max(list_of_integers)
     return None
