@@ -11,6 +11,7 @@ url = sys.argv[1]
 
 response = requests.get(url)
 
-'X-Request-Id' in response.headers
-
-print("{}".format(response.headers['X-Request-Id']))
+if 'X-Request-Id' in response.headers:
+    print("{}".format(response.headers['X-Request-Id']))
+else:
+    print("X-Request-Id not found")
