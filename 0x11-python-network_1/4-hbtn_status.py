@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that fetch a url
+"""script that fetch a urls
 """
 
 import requests
