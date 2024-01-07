@@ -14,4 +14,4 @@ response = requests.get(url)
 if 'X-Request-Id' in response.headers:
     print("{}".format(response.headers['X-Request-Id']))
 else:
-    print("X-Request-Id not found")
+    print("X-Request-Id variable not found in the response headers.")
