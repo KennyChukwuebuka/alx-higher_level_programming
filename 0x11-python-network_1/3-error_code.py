@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 """script that takes in a URL
    -sends a request to the URL
    -and display body of the response displayed in utf-8
