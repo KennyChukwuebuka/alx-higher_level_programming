@@ -6,11 +6,17 @@
 
 const request = require('request');
 
-request('https://jsonplaceholder.typicode.com/todos', (error, response, body) => {
-  if (error) {
-    console.log(error);
-  } else {
-    const completedTasks = JSON.parse(body).filter((task) => task.completed === true);
-    console.log(completedTasks.length);
-  }
-});
+request(process.argv[2], function (error, response, body) {
+    if (!error) {
+      const todos = JSON.parse(body);
+      let completed = {};
+      todos.forEach((todo) => {
+        if (todo.completed && completed[todo.userId] === undefined) {
+          completed[todo.userId] = 1;
+        } else if (todo.completed) {
+          completed[todo.userId] += 1;
+        }
+      });
+      console.log(completed);
+    }
+  });
